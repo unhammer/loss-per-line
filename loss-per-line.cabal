@@ -1,0 +1,42 @@
+cabal-version:      2.4
+name:               loss-per-line
+version:            0.1.0
+synopsis:           Calculate error rate per line
+description:
+category:           Utils
+homepage:           https://github.com/unhammer/loss-per-line
+license:            GPL-3.0-or-later
+license-file:       LICENSE
+author:             Kevin Brubeck Unhammer <unhammer@fsfe.org>
+maintainer:         Kevin Brubeck Unhammer <unhammer@fsfe.org>
+copyright:          Copyright (C) 2023 Kevin Brubeck Unhammer
+extra-source-files: README.md
+
+common common
+    ghc-options:      -Wall
+    build-depends:    base >=4.7 && <5
+    default-language: Haskell2010
+
+executable loss-per-line
+    import:           common
+    hs-source-dirs:   app
+    main-is:          Main.hs
+    build-depends:    loss-per-line
+                    , containers
+                    , directory
+                    , filepath
+                    , text
+
+library
+    import:           common
+    hs-source-dirs:   src
+    exposed-modules:  Lib
+    build-depends:    bytestring
+                    , Cabal
+                    , containers
+                    , directory
+                    , filepath
+                    , text
+                    , vector
+                    , text-metrics
+                    , edit-distance-vector
