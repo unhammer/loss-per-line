@@ -38,5 +38,5 @@ library
                     , filepath
                     , text
                     , vector
-                    , text-metrics
+                    , text-metrics == 0.3.0
                     , edit-distance-vector
